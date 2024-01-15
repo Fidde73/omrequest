@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AddOpenMediaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ForceToPreferredAgent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IVRInfo" nillable="true" type="tns:ArrayOfIVRInformation" />
+      <xs:element minOccurs="0" name="PreferredAgentID" type="xs:int" />
+      <xs:element minOccurs="0" name="PreferredAgentLogonID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrivateData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueStartTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ServiceGroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionPriority" type="xs:int" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeOfSession" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOpenMediaRequest" nillable="true" type="tns:AddOpenMediaRequest" />
+  <xs:complexType name="ArrayOfIVRInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IVRInformation" nillable="true" type="tns:IVRInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIVRInformation" nillable="true" type="tns:ArrayOfIVRInformation" />
+  <xs:complexType name="IVRInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IVRInformation" nillable="true" type="tns:IVRInformation" />
+  <xs:complexType name="AddOpenMediaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EWT" type="xs:int" />
+      <xs:element minOccurs="0" name="OpenMediaID" type="xs:int" />
+      <xs:element minOccurs="0" name="QueuePosition" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestStatus" type="tns:OpenMediaRequestStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddOpenMediaResponse" nillable="true" type="tns:AddOpenMediaResponse" />
+  <xs:simpleType name="OpenMediaRequestStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="GroupClosed" />
+      <xs:enumeration value="InvalidGroup" />
+      <xs:enumeration value="TenantDisabled" />
+      <xs:enumeration value="AgentLoggedOff" />
+      <xs:enumeration value="InvalidID" />
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpenMediaRequestStatus" nillable="true" type="tns:OpenMediaRequestStatus" />
+  <xs:complexType name="CancelOpenMediaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CancelIfAllocated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DoNotReport" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OpenMediaID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CancelOpenMediaRequest" nillable="true" type="tns:CancelOpenMediaRequest" />
+  <xs:complexType name="GetOpenMediaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OpenMediaRequests" nillable="true" type="tns:ArrayOfOpenMediaRequest" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetOpenMediaResponse" nillable="true" type="tns:GetOpenMediaResponse" />
+  <xs:complexType name="ArrayOfOpenMediaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OpenMediaRequest" nillable="true" type="tns:OpenMediaRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOpenMediaRequest" nillable="true" type="tns:ArrayOfOpenMediaRequest" />
+  <xs:complexType name="OpenMediaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgentID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LogonID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueuePosition" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceGroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="tns:OpenMediaStatus" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeStamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpenMediaRequest" nillable="true" type="tns:OpenMediaRequest" />
+  <xs:simpleType name="OpenMediaStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Queued" />
+      <xs:enumeration value="AllocatedToAgent" />
+      <xs:enumeration value="AgentProcessing" />
+      <xs:enumeration value="Complete" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="Cancelled" />
+      <xs:enumeration value="Clerical" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpenMediaStatus" nillable="true" type="tns:OpenMediaStatus" />
+  <xs:complexType name="ServiceGroupStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Open" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceGroupID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceGroupStatus" nillable="true" type="tns:ServiceGroupStatus" />
+  <xs:complexType name="GetAllServiceGroupStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:ArrayOfServiceGroupStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllServiceGroupStatusResponse" nillable="true" type="tns:GetAllServiceGroupStatusResponse" />
+  <xs:complexType name="ArrayOfServiceGroupStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceGroupStatus" nillable="true" type="tns:ServiceGroupStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceGroupStatus" nillable="true" type="tns:ArrayOfServiceGroupStatus" />
+  <xs:complexType name="SetOptionsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgentActionOptions" type="xs:int" />
+      <xs:element minOccurs="0" name="AllowDifferentTypes" type="xs:int" />
+      <xs:element minOccurs="0" name="CloseTabOptions" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxNumberOfSessions" type="xs:int" />
+      <xs:element minOccurs="0" name="ResetAllOptions" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SessionLinkOptions" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeOfSession" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetOptionsRequest" nillable="true" type="tns:SetOptionsRequest" />
+  <xs:complexType name="GetOMAgentsByGroupResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AgentList" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="ServiceGroupID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetOMAgentsByGroupResponse" nillable="true" type="tns:GetOMAgentsByGroupResponse" />
+  <xs:complexType name="DivertOpenMediaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OpenMediaID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceGroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DivertOpenMediaRequest" nillable="true" type="tns:DivertOpenMediaRequest" />
+  <xs:complexType name="DivertOpenMediaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OpenMediaID" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestStatus" type="tns:OpenMediaRequestStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DivertOpenMediaResponse" nillable="true" type="tns:DivertOpenMediaResponse" />
+  <xs:complexType name="ModifyOpenMediaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IVRInfo" nillable="true" type="tns:ArrayOfIVRInformation" />
+      <xs:element minOccurs="0" name="OpenMediaID" type="xs:int" />
+      <xs:element minOccurs="0" name="PrivateData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifyOpenMediaRequest" nillable="true" type="tns:ModifyOpenMediaRequest" />
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://192.168.1.60:12615/OpenMediaService?wsdl" filename="OpenMediaService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.1.60:12615/OpenMediaService?xsd=xsd0" filename="OpenMediaService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.1.60:12615/OpenMediaService?xsd=xsd1" filename="OpenMediaService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.1.60:12615/OpenMediaService?xsd=xsd2" filename="OpenMediaService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.1.60:12615/OpenMediaService?xsd=xsd3" filename="OpenMediaService2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://192.168.1.60:12615/OpenMediaService?disco" filename="OpenMediaService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.1.60:12615/OpenMediaService?xsd=xsd5" filename="OpenMediaService3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.1.60:12615/OpenMediaService?xsd=xsd6" filename="OpenMediaService4.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://192.168.1.60:12615/OpenMediaService?xsd=xsd4" filename="OpenMediaService5.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

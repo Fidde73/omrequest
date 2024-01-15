@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="OpenMediaService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" />
+      <xsd:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+      <xsd:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.DataContracts" />
+      <xsd:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://192.168.1.60:12615/OpenMediaService?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOpenMediaService_AddRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRequest" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_AddRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_AddRequest_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q1:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_AddRequest_NoLicenseFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q2:NoLicenseFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_AddRequest_RouterDisconnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q3:RouterDisconnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_AddRequest_InvalidDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/System.IO" name="detail" element="q4:InvalidDataException" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_CancelRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelRequest" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_CancelRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_CancelRequest_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q5:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_CancelRequest_NoLicenseFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q6:NoLicenseFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_CancelRequest_RouterDisconnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q7:RouterDisconnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_CancelRequest_InvalidOpenMediaIDFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q8:InvalidOpenMediaIDFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestStatusByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenMediaRequestStatusByID" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestStatusByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenMediaRequestStatusByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestStatusByID_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q9:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestStatusByID_InvalidOpenMediaIDFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q10:InvalidOpenMediaIDFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestHistoryByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenMediaRequestHistoryByID" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestHistoryByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenMediaRequestHistoryByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestHistoryByID_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q11:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestHistoryByID_InvalidOpenMediaIDFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q12:InvalidOpenMediaIDFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestsByTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenMediaRequestsByTime" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestsByTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenMediaRequestsByTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOpenMediaRequestsByTime_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q13:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetAllOpenMediaRequestStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOpenMediaRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetAllOpenMediaRequestStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOpenMediaRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetAllOpenMediaRequestStatus_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q14:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetServiceGroupStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceGroupStatus" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetServiceGroupStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceGroupStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetServiceGroupStatus_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q15:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetServiceGroupStatus_InvalidDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/System.IO" name="detail" element="q16:InvalidDataException" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetServiceGroupStatus_RouterDisconnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q17:RouterDisconnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetAllOpenMediaServiceGroupStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOpenMediaServiceGroupStatus" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetAllOpenMediaServiceGroupStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOpenMediaServiceGroupStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetAllOpenMediaServiceGroupStatus_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q18:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetAllOpenMediaServiceGroupStatus_RouterDisconnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q19:RouterDisconnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetAllOpenMediaServiceGroupStatus_InvalidDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/System.IO" name="detail" element="q20:InvalidDataException" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_SetOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOptions" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_SetOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_SetOptions_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q21:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_SetOptions_NoLicenseFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q22:NoLicenseFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_SetOptions_RouterDisconnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q23:RouterDisconnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_SetOptions_InvalidDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/System.IO" name="detail" element="q24:InvalidDataException" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOMAgentsByGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOMAgentsByGroup" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOMAgentsByGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOMAgentsByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOMAgentsByGroup_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q25:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOMAgentsByGroup_InvalidDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/System.IO" name="detail" element="q26:InvalidDataException" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_GetOMAgentsByGroup_RouterDisconnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q27:RouterDisconnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_DivertRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:DivertRequest" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_DivertRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivertRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_DivertRequest_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q28:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_DivertRequest_NoLicenseFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q29:NoLicenseFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_DivertRequest_RouterDisconnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q30:RouterDisconnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_DivertRequest_InvalidDataExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/System.IO" name="detail" element="q31:InvalidDataException" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_ModifyRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyRequest" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_ModifyRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_ModifyRequest_InvalidUserFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q32:InvalidUserFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_ModifyRequest_NoLicenseFaultFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q33:NoLicenseFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_ModifyRequest_RouterDisconnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q34:RouterDisconnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IOpenMediaService_ModifyRequest_InvalidOpenMediaIDFaultFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" name="detail" element="q35:InvalidOpenMediaIDFault" />
+  </wsdl:message>
+  <wsdl:portType name="IOpenMediaService">
+    <wsdl:operation name="AddRequest">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/AddRequest" message="tns:IOpenMediaService_AddRequest_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/AddRequestResponse" message="tns:IOpenMediaService_AddRequest_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/AddRequestInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_AddRequest_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/AddRequestNoLicenseFaultFault" name="NoLicenseFaultFault" message="tns:IOpenMediaService_AddRequest_NoLicenseFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/AddRequestRouterDisconnectedFaultFault" name="RouterDisconnectedFaultFault" message="tns:IOpenMediaService_AddRequest_RouterDisconnectedFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/AddRequestInvalidDataExceptionFault" name="InvalidDataExceptionFault" message="tns:IOpenMediaService_AddRequest_InvalidDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelRequest">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/CancelRequest" message="tns:IOpenMediaService_CancelRequest_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/CancelRequestResponse" message="tns:IOpenMediaService_CancelRequest_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/CancelRequestInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_CancelRequest_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/CancelRequestNoLicenseFaultFault" name="NoLicenseFaultFault" message="tns:IOpenMediaService_CancelRequest_NoLicenseFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/CancelRequestRouterDisconnectedFaultFault" name="RouterDisconnectedFaultFault" message="tns:IOpenMediaService_CancelRequest_RouterDisconnectedFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/CancelRequestInvalidOpenMediaIDFaultFault" name="InvalidOpenMediaIDFaultFault" message="tns:IOpenMediaService_CancelRequest_InvalidOpenMediaIDFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMediaRequestStatusByID">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestStatusByID" message="tns:IOpenMediaService_GetOpenMediaRequestStatusByID_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestStatusByIDResponse" message="tns:IOpenMediaService_GetOpenMediaRequestStatusByID_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestStatusByIDInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_GetOpenMediaRequestStatusByID_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestStatusByIDInvalidOpenMediaIDFaultFault" name="InvalidOpenMediaIDFaultFault" message="tns:IOpenMediaService_GetOpenMediaRequestStatusByID_InvalidOpenMediaIDFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMediaRequestHistoryByID">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestHistoryByID" message="tns:IOpenMediaService_GetOpenMediaRequestHistoryByID_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestHistoryByIDResponse" message="tns:IOpenMediaService_GetOpenMediaRequestHistoryByID_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestHistoryByIDInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_GetOpenMediaRequestHistoryByID_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestHistoryByIDInvalidOpenMediaIDFaultFault" name="InvalidOpenMediaIDFaultFault" message="tns:IOpenMediaService_GetOpenMediaRequestHistoryByID_InvalidOpenMediaIDFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMediaRequestsByTime">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestsByTime" message="tns:IOpenMediaService_GetOpenMediaRequestsByTime_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestsByTimeResponse" message="tns:IOpenMediaService_GetOpenMediaRequestsByTime_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestsByTimeInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_GetOpenMediaRequestsByTime_InvalidUserFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOpenMediaRequestStatus">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/GetAllOpenMediaRequestStatus" message="tns:IOpenMediaService_GetAllOpenMediaRequestStatus_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/GetAllOpenMediaRequestStatusResponse" message="tns:IOpenMediaService_GetAllOpenMediaRequestStatus_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetAllOpenMediaRequestStatusInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_GetAllOpenMediaRequestStatus_InvalidUserFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceGroupStatus">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/GetServiceGroupStatus" message="tns:IOpenMediaService_GetServiceGroupStatus_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/GetServiceGroupStatusResponse" message="tns:IOpenMediaService_GetServiceGroupStatus_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetServiceGroupStatusInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_GetServiceGroupStatus_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetServiceGroupStatusInvalidDataExceptionFault" name="InvalidDataExceptionFault" message="tns:IOpenMediaService_GetServiceGroupStatus_InvalidDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetServiceGroupStatusRouterDisconnectedFaultFault" name="RouterDisconnectedFaultFault" message="tns:IOpenMediaService_GetServiceGroupStatus_RouterDisconnectedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOpenMediaServiceGroupStatus">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/GetAllOpenMediaServiceGroupStatus" message="tns:IOpenMediaService_GetAllOpenMediaServiceGroupStatus_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/GetAllOpenMediaServiceGroupStatusResponse" message="tns:IOpenMediaService_GetAllOpenMediaServiceGroupStatus_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetAllOpenMediaServiceGroupStatusInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_GetAllOpenMediaServiceGroupStatus_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetAllOpenMediaServiceGroupStatusRouterDisconnectedFaultFault" name="RouterDisconnectedFaultFault" message="tns:IOpenMediaService_GetAllOpenMediaServiceGroupStatus_RouterDisconnectedFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetAllOpenMediaServiceGroupStatusInvalidDataExceptionFault" name="InvalidDataExceptionFault" message="tns:IOpenMediaService_GetAllOpenMediaServiceGroupStatus_InvalidDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOptions">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/SetOptions" message="tns:IOpenMediaService_SetOptions_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/SetOptionsResponse" message="tns:IOpenMediaService_SetOptions_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/SetOptionsInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_SetOptions_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/SetOptionsNoLicenseFaultFault" name="NoLicenseFaultFault" message="tns:IOpenMediaService_SetOptions_NoLicenseFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/SetOptionsRouterDisconnectedFaultFault" name="RouterDisconnectedFaultFault" message="tns:IOpenMediaService_SetOptions_RouterDisconnectedFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/SetOptionsInvalidDataExceptionFault" name="InvalidDataExceptionFault" message="tns:IOpenMediaService_SetOptions_InvalidDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOMAgentsByGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/GetOMAgentsByGroup" message="tns:IOpenMediaService_GetOMAgentsByGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/GetOMAgentsByGroupResponse" message="tns:IOpenMediaService_GetOMAgentsByGroup_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetOMAgentsByGroupInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_GetOMAgentsByGroup_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetOMAgentsByGroupInvalidDataExceptionFault" name="InvalidDataExceptionFault" message="tns:IOpenMediaService_GetOMAgentsByGroup_InvalidDataExceptionFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/GetOMAgentsByGroupRouterDisconnectedFaultFault" name="RouterDisconnectedFaultFault" message="tns:IOpenMediaService_GetOMAgentsByGroup_RouterDisconnectedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DivertRequest">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/DivertRequest" message="tns:IOpenMediaService_DivertRequest_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/DivertRequestResponse" message="tns:IOpenMediaService_DivertRequest_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/DivertRequestInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_DivertRequest_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/DivertRequestNoLicenseFaultFault" name="NoLicenseFaultFault" message="tns:IOpenMediaService_DivertRequest_NoLicenseFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/DivertRequestRouterDisconnectedFaultFault" name="RouterDisconnectedFaultFault" message="tns:IOpenMediaService_DivertRequest_RouterDisconnectedFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/DivertRequestInvalidDataExceptionFault" name="InvalidDataExceptionFault" message="tns:IOpenMediaService_DivertRequest_InvalidDataExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyRequest">
+      <wsdl:input wsam:Action="http://tempuri.org/IOpenMediaService/ModifyRequest" message="tns:IOpenMediaService_ModifyRequest_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IOpenMediaService/ModifyRequestResponse" message="tns:IOpenMediaService_ModifyRequest_OutputMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/ModifyRequestInvalidUserFaultFault" name="InvalidUserFaultFault" message="tns:IOpenMediaService_ModifyRequest_InvalidUserFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/ModifyRequestNoLicenseFaultFault" name="NoLicenseFaultFault" message="tns:IOpenMediaService_ModifyRequest_NoLicenseFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/ModifyRequestRouterDisconnectedFaultFault" name="RouterDisconnectedFaultFault" message="tns:IOpenMediaService_ModifyRequest_RouterDisconnectedFaultFault_FaultMessage" />
+      <wsdl:fault wsam:Action="http://tempuri.org/IOpenMediaService/ModifyRequestInvalidOpenMediaIDFaultFault" name="InvalidOpenMediaIDFaultFault" message="tns:IOpenMediaService_ModifyRequest_InvalidOpenMediaIDFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOpenMediaService" type="tns:IOpenMediaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddRequest">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/AddRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NoLicenseFaultFault">
+        <soap:fault use="literal" name="NoLicenseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RouterDisconnectedFaultFault">
+        <soap:fault use="literal" name="RouterDisconnectedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataExceptionFault">
+        <soap:fault use="literal" name="InvalidDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelRequest">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/CancelRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NoLicenseFaultFault">
+        <soap:fault use="literal" name="NoLicenseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RouterDisconnectedFaultFault">
+        <soap:fault use="literal" name="RouterDisconnectedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOpenMediaIDFaultFault">
+        <soap:fault use="literal" name="InvalidOpenMediaIDFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMediaRequestStatusByID">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestStatusByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOpenMediaIDFaultFault">
+        <soap:fault use="literal" name="InvalidOpenMediaIDFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMediaRequestHistoryByID">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestHistoryByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOpenMediaIDFaultFault">
+        <soap:fault use="literal" name="InvalidOpenMediaIDFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenMediaRequestsByTime">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/GetOpenMediaRequestsByTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOpenMediaRequestStatus">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/GetAllOpenMediaRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceGroupStatus">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/GetServiceGroupStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataExceptionFault">
+        <soap:fault use="literal" name="InvalidDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RouterDisconnectedFaultFault">
+        <soap:fault use="literal" name="RouterDisconnectedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOpenMediaServiceGroupStatus">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/GetAllOpenMediaServiceGroupStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RouterDisconnectedFaultFault">
+        <soap:fault use="literal" name="RouterDisconnectedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataExceptionFault">
+        <soap:fault use="literal" name="InvalidDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetOptions">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/SetOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NoLicenseFaultFault">
+        <soap:fault use="literal" name="NoLicenseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RouterDisconnectedFaultFault">
+        <soap:fault use="literal" name="RouterDisconnectedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataExceptionFault">
+        <soap:fault use="literal" name="InvalidDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOMAgentsByGroup">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/GetOMAgentsByGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataExceptionFault">
+        <soap:fault use="literal" name="InvalidDataExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RouterDisconnectedFaultFault">
+        <soap:fault use="literal" name="RouterDisconnectedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DivertRequest">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/DivertRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NoLicenseFaultFault">
+        <soap:fault use="literal" name="NoLicenseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RouterDisconnectedFaultFault">
+        <soap:fault use="literal" name="RouterDisconnectedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDataExceptionFault">
+        <soap:fault use="literal" name="InvalidDataExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyRequest">
+      <soap:operation soapAction="http://tempuri.org/IOpenMediaService/ModifyRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidUserFaultFault">
+        <soap:fault use="literal" name="InvalidUserFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="NoLicenseFaultFault">
+        <soap:fault use="literal" name="NoLicenseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RouterDisconnectedFaultFault">
+        <soap:fault use="literal" name="RouterDisconnectedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOpenMediaIDFaultFault">
+        <soap:fault use="literal" name="InvalidOpenMediaIDFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OpenMediaService">
+    <wsdl:port name="BasicHttpBinding_IOpenMediaService" binding="tns:BasicHttpBinding_IOpenMediaService">
+      <soap:address location="http://192.168.1.60:12615/OpenMediaService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

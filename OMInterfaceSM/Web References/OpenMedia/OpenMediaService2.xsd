@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Solidus.OpenMedia.Contracts.Faults" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="InvalidUserFault">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="InvalidUserFault" nillable="true" type="tns:InvalidUserFault" />
+  <xs:complexType name="NoLicenseFault">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="NoLicenseFault" nillable="true" type="tns:NoLicenseFault" />
+  <xs:complexType name="RouterDisconnectedFault">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RouterDisconnectedFault" nillable="true" type="tns:RouterDisconnectedFault" />
+  <xs:complexType name="InvalidOpenMediaIDFault">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="InvalidOpenMediaIDFault" nillable="true" type="tns:InvalidOpenMediaIDFault" />
+</xs:schema>
